@@ -28,7 +28,7 @@
 
             foreach (Employee item in employeeList)
             {
-                Console.Write("\nEmployee name: {0}, and salary: {1:C}", item.Name, item.Salary);
+                Console.Write("\nEmployee name and salary: {0}, {1:C}", item.Name, item.Salary);
             }
 
         }
