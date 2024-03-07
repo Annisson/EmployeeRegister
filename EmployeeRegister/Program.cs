@@ -6,16 +6,15 @@ namespace EmployeeRegister
     {
         static void Main(string[] args)
         {
-            bool addEmployee = true;
-            Console.WriteLine("Employee Register");
-
             Employee addNewEmployee = new Employee();
+            bool addEmployee = true;
+
+            Console.WriteLine("Welcome to the Employee Register");
 
             while (addEmployee)
             {
                 Console.WriteLine("\n\nWould you like to add a new employee to the registry? (Y/N)");
                 string userInput = Console.ReadLine();
-
                 Console.Clear();
 
                 switch (userInput)
@@ -29,6 +28,7 @@ namespace EmployeeRegister
                         uint salary = uint.Parse(Console.ReadLine());
 
                         addNewEmployee.NewEmployee(name, salary);
+                        Console.Clear();
 
                         Console.WriteLine("\nCurrently in the registry: ");
                         addNewEmployee.PrintEmployeeList();
