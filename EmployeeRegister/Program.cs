@@ -13,21 +13,17 @@ namespace EmployeeRegister
 
             while (addEmployee)
             {
-                Console.WriteLine("\n\nWould you like to add a new employee to the registry? (Y/N)");
-                string userInput = Console.ReadLine();
+                string userInput = Util.StringInput("\n\nWould you like to add a new employee to the registry? (Y/N)");
                 Console.Clear();
 
                 switch (userInput)
                 {
                     case "y":
                     case "Y":
-                        Console.Write("\nPlease enter employee name: ");
-                        string name = Console.ReadLine();
-
-                        Console.Write("Please enter employee salary: ");
-                        uint salary = uint.Parse(Console.ReadLine());
-
-                        addNewEmployee.NewEmployee(name, salary);
+                        string employeeName = Util.StringInput("\nPlease enter employee name: ");
+                        uint employeeSalary = Util.IntInput("Please enter employee salary: ");
+                         
+                        addNewEmployee.NewEmployee(employeeName, employeeSalary);
                         Console.Clear();
 
                         Console.WriteLine("\nCurrently in the registry: ");
@@ -41,7 +37,7 @@ namespace EmployeeRegister
                         break;
 
                     default:
-                        Console.WriteLine($"\"{userInput}\" is a valid input");
+                        Console.WriteLine($"\"{userInput}\" is not a valid input.");
                         break;
 
                 }
