@@ -18,31 +18,32 @@ namespace EmployeeRegister
 
                 Console.Clear();
 
-                if (userInput == "Y" || userInput == "y")
+                switch (userInput)
                 {
-                    Console.Write("\nPlease enter employee name: ");
-                    string name = Console.ReadLine();
+                    case "y":
+                    case "Y":
+                        Console.Write("\nPlease enter employee name: ");
+                        string name = Console.ReadLine();
 
-                    Console.Write("Please enter employee salary: ");
-                    uint salary = uint.Parse(Console.ReadLine());
+                        Console.Write("Please enter employee salary: ");
+                        uint salary = uint.Parse(Console.ReadLine());
 
-                    addNewEmployee.NewEmployee(name, salary);
+                        addNewEmployee.NewEmployee(name, salary);
 
-                    Console.WriteLine("\nCurrently in the registry: ");
-                    addNewEmployee.PrintEmployeeList();
+                        Console.WriteLine("\nCurrently in the registry: ");
+                        addNewEmployee.PrintEmployeeList();
+                        break;
 
-                    continue;
+                    case "n":
+                    case "N":
+                        Console.WriteLine("Please enter any key to exit the application");
+                        Environment.Exit(0);
+                        break;
 
-                }
-                else if (userInput == "N" || userInput == "n")
-                {
-                    Console.WriteLine("Please enter any key to exit the application");
-                    addEmployee = false;
-                }
-                else
-                {
-                    Console.WriteLine("Error");
-                    break;
+                    default:
+                        Console.WriteLine($"\"{userInput}\" is a valid input");
+                        break;
+
                 }
             }
         }
