@@ -26,7 +26,6 @@ namespace EmployeeRegister
                         addNewEmployee.NewEmployee(employeeName, employeeSalary);
                         Console.Clear();
 
-                        Console.WriteLine("\nCurrently in the registry: ");
                         addNewEmployee.PrintEmployeeList();
                         break;
 

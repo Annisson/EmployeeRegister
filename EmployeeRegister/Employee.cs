@@ -25,6 +25,7 @@
 
         public void PrintEmployeeList()
         {
+            Console.WriteLine("\nCurrently in the registry: ");
 
             foreach (Employee item in employeeList)
             {
