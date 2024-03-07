@@ -8,11 +8,12 @@
             string userInput;
             do
             {
-                Console.WriteLine($"{input}:");
+                Console.WriteLine($"{input}");
                 userInput = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(userInput))
                 {
+                    Console.Clear();
                     Console.WriteLine($"\"{userInput}\" is not a valid input.");
                 }
                 else
@@ -20,7 +21,7 @@
                     success = true;
                 }
 
-            } while (success);
+            } while (!success);
 
             return userInput;
         }
